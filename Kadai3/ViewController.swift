@@ -16,12 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var rightLabel: UILabel!
     @IBOutlet private weak var resultLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
     @IBAction private func calculateButton(_ sender: UIButton) {
-        // 文字列を数値に変換
         let leftNumber = Int(leftTextFiled.text!) ?? 0
         let leftNewNumber: Int
         let rightNumber = Int(rightTextField.text!) ?? 0
