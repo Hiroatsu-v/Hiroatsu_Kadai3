@@ -18,27 +18,26 @@ class ViewController: UIViewController {
 
     @IBAction private func calculateButton(_ sender: UIButton) {
         let leftNumber = Int(leftTextFiled.text!) ?? 0
-        let leftNewNumber: Int
         let rightNumber = Int(rightTextField.text!) ?? 0
-        let rightNewNumber: Int
 
         // 左側のスイッチ
+        let leftSignedNumber: Int
         if leftSwitch.isOn {
-            leftLabel.text = "-\(leftNumber)"
-            leftNewNumber = Int(leftLabel.text!) ?? 0
+            leftSignedNumber = -leftNumber
         } else {
-            leftLabel.text = String(leftNumber)
-            leftNewNumber = Int(leftLabel.text!) ?? 0
+            leftSignedNumber = leftNumber
         }
+        leftLabel.text = String(leftSignedNumber)
 
         // 右側のスイッチ
+        let rightSignedNumber: Int
         if rightSwitch.isOn {
-            rightLabel.text = "-\(rightNumber)"
-            rightNewNumber = Int(rightLabel.text!) ?? 0
+            rightSignedNumber = -rightNumber
         } else {
-            rightLabel.text = String(rightNumber)
-            rightNewNumber = Int(rightLabel.text!) ?? 0
+            rightSignedNumber = rightNumber
         }
-        resultLabel.text = String(leftNewNumber + rightNewNumber)
+        rightLabel.text = String(rightSignedNumber)
+
+        resultLabel.text = String(leftSignedNumber + rightSignedNumber)
     }
 }
