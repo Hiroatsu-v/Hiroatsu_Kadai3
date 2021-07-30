@@ -10,10 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet private weak var leftTextFiled: UITextField!
     @IBOutlet private weak var rightTextField: UITextField!
-
     @IBOutlet private weak var leftSwitch: UISwitch!
     @IBOutlet private weak var rightSwitch: UISwitch!
-
     @IBOutlet private weak var leftLabel: UILabel!
     @IBOutlet private weak var rightLabel: UILabel!
     @IBOutlet private weak var resultLabel: UILabel!
@@ -30,7 +28,7 @@ class ViewController: UIViewController {
         let rightNewNumber: Int
 
         // 左側のスイッチ
-        if leftSwitch.isOn == true {
+        if leftSwitch.isOn {
             leftLabel.text = "-\(leftNumber)"
             leftNewNumber = Int(leftLabel.text!) ?? 0
         } else {
@@ -39,7 +37,7 @@ class ViewController: UIViewController {
         }
 
         // 右側のスイッチ
-        if rightSwitch.isOn == true {
+        if rightSwitch.isOn {
             rightLabel.text = "-\(rightNumber)"
             rightNewNumber = Int(rightLabel.text!) ?? 0
         } else {
